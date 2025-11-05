@@ -11,8 +11,10 @@ make docker
 ## Running
 
 ```bash
-docker run -it -p 8000:8000 host <tag>
+docker run -it -p 8000:80 ilabs/redlite-livecodebench-grader:latest
 ```
+
+Server will me listening on local port 8000.
 
 ## API endpoints
 

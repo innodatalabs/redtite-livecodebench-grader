@@ -9,7 +9,9 @@ FROM alpine/git AS git
 
 WORKDIR /app
 
-RUN git clone https://github.com/LiveCodeBench/LiveCodeBench.git && git checkout 28fef95ea8c9f7a547c8329f2cd3d32b92c1fa24
+RUN git clone https://github.com/LiveCodeBench/LiveCodeBench.git && \
+    cd LiveCodeBench && \
+    git checkout 28fef95ea8c9f7a547c8329f2cd3d32b92c1fa24
 
 FROM python:3.12-slim
 
@@ -26,7 +28,7 @@ ENV PYTHONPATH=.:/app/LiveCodeBench
 
 CMD [ "gunicorn",  \
     "-w", "5", \
-    "--bind", "0.0.0.0:8000", \
+    "--bind", "0.0.0.0:80", \
     "--timeout", "300", \
     "--worker-class", "aiohttp.GunicornWebWorker", \
     "server:app" \
