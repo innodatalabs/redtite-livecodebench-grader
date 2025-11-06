@@ -1,5 +1,2 @@
 aiohttp~=3.13.2
 gunicorn~=23.0.0
-# LiveCodeBench deps
-numpy~=2.3.4
-tqdm~=4.67.1

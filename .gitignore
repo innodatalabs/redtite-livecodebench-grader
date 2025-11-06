@@ -4,4 +4,6 @@ __pycache__
 /*.egg-info
 /LiveCodeBench
 /sample.py
+/test.py
+/err
 

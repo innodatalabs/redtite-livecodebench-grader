@@ -30,7 +30,12 @@ GET /ping
 
 ### /run_test/{testtype}
 
-POST request that expects `application/json` body structured as such:
+POST request that expects `application/json` body.
+
+Here `testtype` can be either `stdin` or `functional`, depending on the task. Note that `functional` one requires passing
+function name as a `name` field in the JSON payload.
+
+JSON body should be structured as such:
 
 * `code: str`: Python code to test
 * `input: str`: test input. Could be several lines that is interpreted as several test inputs
